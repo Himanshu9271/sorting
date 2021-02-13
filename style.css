@@ -1,0 +1,14 @@
+body {
+    background-color: #101820FF;
+}
+.nav-bar{
+    background-color: #FEE715FF;
+}
+canvas{
+    
+    margin: 0.5rem;
+}
+#random-button{
+    padding: 0.2em;
+    margin: 0.3em;
+}
