@@ -59,8 +59,15 @@ function swap( a,  b){
     arr[b]=temp;
 }
 function sort_arr(){
-    bubble_sort();
-    //arr.sort();
+    var algo=document.querySelector('select').value;
+    if(algo=="bubble"){
+        bubble_sort();
+    }
+    else if(algo=="insertion"){
+        insertionSort();
+    }
+    
+    
     refresh();
     
 }
@@ -78,3 +85,33 @@ async function bubble_sort(){
         }
     }
 }
+
+async function insertionSort()  
+{  
+    var i, key, j;  
+    for (i = 1; i < arrSize; i++) 
+    {  
+        c.fillStyle='#ff2800';
+        
+        key = arr[i];  
+        j = i - 1;  
+        
+        
+        c.fillRect((rectWidth+rectSpacing)*i,canvas.height,rectWidth,-arr[i]);
+        while (j >= 0 && arr[j] > key) 
+        {  
+            arr[j + 1] = arr[j];  
+            j = j - 1;
+            c.fillStyle='#ff2800';
+            c.fillRect((rectWidth+rectSpacing)*j,canvas.height,rectWidth,-arr[j]);
+            //c.fillRect((rectWidth+rectSpacing)*(j+1),canvas.height,rectWidth,-arr[j+1]);
+            await sleep(10);
+            c.fillStyle='#FEE715FF';
+            c.fillRect((rectWidth+rectSpacing)*j,canvas.height,rectWidth,-arr[j]);
+            j--;
+        }  
+        arr[j + 1] = key;
+        refresh();
+          
+    }  
+}  

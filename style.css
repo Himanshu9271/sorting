@@ -12,3 +12,6 @@ canvas{
     padding: 0.2em;
     margin: 0.3em;
 }
+input {
+    width:50px;
+}
