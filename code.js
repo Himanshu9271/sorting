@@ -49,7 +49,7 @@ function refresh(){
 }
 //swap function
 function swap( a,  b){
-    c.fillStyle='#ff0000';
+    c.fillStyle='#ff2800';
     c.fillRect((rectWidth+rectSpacing)*a,canvas.height,rectWidth,-arr[a]);
     c.fillRect((rectWidth+rectSpacing)*b,canvas.height,rectWidth,-arr[b]);
     
