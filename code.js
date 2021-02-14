@@ -10,7 +10,7 @@ var input=document.getElementById("sizeOfArr");
 var arrSize=50;
 var rectWidth=Number(canvas.width/arrSize)*0.9;
 var rectSpacing=Number(canvas.width/arrSize)*0.1;
-
+var delay=document.getElementById('Speed').value;
 
 function sleep(duration) {
 	return new Promise(resolve => {
@@ -60,6 +60,7 @@ function swap( a,  b){
 }
 function sort_arr(){
     var algo=document.querySelector('select').value;
+    delay=document.getElementById('Speed').value;
     if(algo=="bubble"){
         bubble_sort();
     }
@@ -77,7 +78,7 @@ async function bubble_sort(){
         for(var j=i;j<arrSize;j++){
             if(arr[i]>arr[j]){
                 swap(i,j);
-                await sleep(10);
+                await sleep(delay);
                 
                 
                 refresh();
@@ -105,7 +106,7 @@ async function insertionSort()
             c.fillStyle='#ff2800';
             c.fillRect((rectWidth+rectSpacing)*j,canvas.height,rectWidth,-arr[j]);
             //c.fillRect((rectWidth+rectSpacing)*(j+1),canvas.height,rectWidth,-arr[j+1]);
-            await sleep(10);
+            await sleep(delay);
             c.fillStyle='#FEE715FF';
             c.fillRect((rectWidth+rectSpacing)*j,canvas.height,rectWidth,-arr[j]);
             j--;
